@@ -28,6 +28,12 @@
         <p class="text-lg md:text-xl text-gray-300">You have successfully entered the password.</p>
     </div>
 
+    <!-- Audio Player -->
+    <audio id="backgroundMusic" preload="auto" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <!-- JavaScript -->
     <script>
         document.getElementById('submitButton').addEventListener('click', function () {
@@ -36,14 +42,24 @@
             const errorMessage = document.getElementById('errorMessage');
             const passwordForm = document.getElementById('passwordForm');
             const mainContent = document.getElementById('mainContent');
+            const backgroundMusic = document.getElementById('backgroundMusic');
 
             if (password === correctPassword) {
                 // पासवर्ड सही है
                 passwordForm.style.display = "none";
                 mainContent.style.display = "block";
+                backgroundMusic.play(); // म्यूजिक प्ले करें
             } else {
                 // पासवर्ड गलत है
                 errorMessage.classList.remove('hidden');
+            }
+        });
+
+        // म्यूजिक ऑटो-प्ले को सुनिश्चित करें
+        document.addEventListener('click', () => {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
             }
         });
     </script>
