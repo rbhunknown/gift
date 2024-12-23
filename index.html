@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 20%;
-        }
-        h1 {
-            color: #4CAF50;
-        }
-        p {
-            color: #555;
-        }
-    </style>
+    <title>Mobile Friendly Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Welcome to My Page!</h1>
-    <p>This is a simple HTML page.</p>
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
+
+    <!-- Main Content -->
+    <div class="text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Welcome to My Mobile Site!</h1>
+        <p class="text-lg md:text-xl text-gray-300">Enjoy the music while exploring the site.</p>
+    </div>
+
+    <!-- Audio Player -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Play the background music when the page loads
+            const music = document.getElementById('backgroundMusic');
+            music.play().catch(error => {
+                console.log('Music autoplay blocked:', error);
+            });
+        });
+    </script>
 </body>
 </html>
