@@ -3,31 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Friendly Website</title>
+    <title>Password Protected Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #mainContent {
+            display: none; /* मुख्य कंटेंट को छुपा दें */
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
 
-    <!-- Main Content -->
-    <div class="text-center">
-        <h1 class="text-3xl md:text-5xl font-bold mb-4">Welcome to My Mobile Site!</h1>
-        <p class="text-lg md:text-xl text-gray-300">Enjoy the music while exploring the site.</p>
+    <!-- Password Form -->
+    <div id="passwordForm" class="text-center">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4">Enter Password</h1>
+        <input id="passwordInput" type="password" placeholder="Enter Password" 
+               class="p-2 border-2 border-gray-400 rounded-md text-black">
+        <button id="submitButton" class="bg-blue-500 text-white px-4 py-2 rounded-md ml-2">Submit</button>
+        <p id="errorMessage" class="text-red-500 mt-3 hidden">Incorrect Password. Try Again!</p>
     </div>
 
-    <!-- Audio Player -->
-    <audio id="backgroundMusic" autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <!-- Main Content -->
+    <div id="mainContent" class="text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Welcome to My Site!</h1>
+        <p class="text-lg md:text-xl text-gray-300">You have successfully entered the password.</p>
+    </div>
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Play the background music when the page loads
-            const music = document.getElementById('backgroundMusic');
-            music.play().catch(error => {
-                console.log('Music autoplay blocked:', error);
-            });
+        document.getElementById('submitButton').addEventListener('click', function () {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = "12345"; // पासवर्ड यहाँ सेट करें
+            const errorMessage = document.getElementById('errorMessage');
+            const passwordForm = document.getElementById('passwordForm');
+            const mainContent = document.getElementById('mainContent');
+
+            if (password === correctPassword) {
+                // पासवर्ड सही है
+                passwordForm.style.display = "none";
+                mainContent.style.display = "block";
+            } else {
+                // पासवर्ड गलत है
+                errorMessage.classList.remove('hidden');
+            }
         });
     </script>
 </body>
