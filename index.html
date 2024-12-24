@@ -100,7 +100,7 @@
 </head>
 <body class="flex items-center justify-center min-h-screen">
 
-    <!-- Snowflakes (Total 10 Snowflakes with doubled size) -->
+    <!-- Snowflakes -->
     <div class="snowflake" style="left: 10%; animation-delay: 0s;">❄️</div>
     <div class="snowflake" style="left: 20%; animation-delay: 1s;">❄️</div>
     <div class="snowflake" style="left: 30%; animation-delay: 2s;">❄️</div>
@@ -108,7 +108,7 @@
     <div class="snowflake" style="left: 50%; animation-delay: 4s;">❄️</div>
     <div class="snowflake" style="left: 60%; animation-delay: 5s;">❄️</div>
 
-    <!-- Clouds (Reduced size) -->
+    <!-- Clouds -->
     <div class="cloud" style="top: 20%; left: 10%;">☁️</div>
     <div class="cloud" style="top: 10%; left: 40%;">☁️</div>
     <div class="cloud" style="top: 5%; left: 70%;">☁️</div>
@@ -129,7 +129,6 @@
         <h1 class="funky-text">Merry Christmas Rajkumar!</h1>
         <p class="text-lg md:text-xl text-white mt-4">Wishing you peace, joy, and love this festive season!</p>
         <p class="text-lg md:text-xl text-white mt-2">May your Christmas be filled with warmth and happiness.</p>
-        <!-- Gift Button -->
         <button class="gift-button" onclick="location.href='gift.html'">Apna Gift Dekhe</button>
     </div>
 
@@ -143,183 +142,19 @@
     <script>
         document.getElementById('submitButton').addEventListener('click', function () {
             const password = document.getElementById('passwordInput').value;
-            const correctPassword = "192.168.125.149"; // पासवर्ड यहाँ सेट करें
+            const correctPassword = "192.168.125.149"; // Correct password
             const errorMessage = document.getElementById('errorMessage');
             const passwordForm = document.getElementById('passwordForm');
             const mainContent = document.getElementById('mainContent');
             const backgroundMusic = document.getElementById('backgroundMusic');
 
             if (password === correctPassword) {
-                // पासवर्ड सही है
+                // Correct password
                 passwordForm.style.display = "none";
                 mainContent.style.display = "block";
-                backgroundMusic.play(); // म्यूजिक प्ले करें
+                backgroundMusic.play();
             } else {
-                // पासवर्ड गलत है
-                errorMessage.classList.remove('hidden');
-            }
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshuman ka Surprise</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Christmas Red Background */
-        body {
-            background-color: #ff0015; /* क्रिसमस रेड */
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        /* Snowfall animation with double size */
-        .snowflake {
-            position: absolute;
-            top: -10px;
-            color: white;
-            font-size: 3rem; /* Snowflake size doubled */
-            pointer-events: none;
-            animation: snowfall 4s linear infinite;
-        }
-
-        /* Snowfall animation */
-        @keyframes snowfall {
-            to {
-                transform: translateY(100vh);
-                opacity: 0;
-            }
-        }
-
-        /* Cloud animation with reduced size */
-        .cloud {
-            position: absolute;
-            top: 0;
-            font-size: 3rem; /* Cloud size reduced to half */
-            animation: cloudMove 7s linear infinite; /* Speed increased 3 times */
-            opacity: 0.8;
-        }
-
-        /* Cloud movement */
-        @keyframes cloudMove {
-            0% {
-                transform: translateX(-50%) scale(1); /* Reduced size */
-            }
-            100% {
-                transform: translateX(100%) scale(1); /* Clouds will float */
-            }
-        }
-
-        /* Main content and text styles */
-        #mainContent {
-            display: none;
-            text-align: center;
-            color: #fff;
-            z-index: 1;
-        }
-
-        /* Fun and funky letter style */
-        .funky-text {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #FFD700; /* Gold color */
-        }
-
-        /* Password form styles */
-        #passwordForm {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            z-index: 2;
-        }
-
-        #errorMessage {
-            color: red;
-            font-size: 1rem;
-        }
-
-        /* Button styling */
-        .gift-button {
-            margin-top: 20px;
-            background-color: #28a745;
-            color: white;
-            font-size: 1.2rem;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .gift-button:hover {
-            background-color: #218838;
-        }
-    </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
-
-    <!-- Snowflakes (Total 10 Snowflakes with doubled size) -->
-    <div class="snowflake" style="left: 10%; animation-delay: 0s;">❄️</div>
-    <div class="snowflake" style="left: 20%; animation-delay: 1s;">❄️</div>
-    <div class="snowflake" style="left: 30%; animation-delay: 2s;">❄️</div>
-    <div class="snowflake" style="left: 40%; animation-delay: 3s;">❄️</div>
-    <div class="snowflake" style="left: 50%; animation-delay: 4s;">❄️</div>
-    <div class="snowflake" style="left: 60%; animation-delay: 5s;">❄️</div>
-
-    <!-- Clouds (Reduced size) -->
-    <div class="cloud" style="top: 20%; left: 10%;">☁️</div>
-    <div class="cloud" style="top: 10%; left: 40%;">☁️</div>
-    <div class="cloud" style="top: 5%; left: 70%;">☁️</div>
-    <div class="cloud" style="top: 50%; left: 20%;">☁️</div>
-    <div class="cloud" style="top: 30%; left: 60%;">☁️</div>
-
-    <!-- Password Form -->
-    <div id="passwordForm" class="text-center">
-        <h4 class="text-2xl md:text-4xl font-bold mb-4 text-black">Enter your Laptop's IP address</h4>
-        <input id="passwordInput" type="password" placeholder="IP address.. " 
-               class="p-2 border-2 border-gray-400 rounded-md text-black mb-4">
-        <button id="submitButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
-        <p id="errorMessage" class="text-red-500 mt-3 hidden">Ye to Anshuman ka IP nahi hai</p>
-    </div>
-
-    <!-- Main Content after password validation -->
-    <div id="mainContent">
-        <h1 class="funky-text">Merry Christmas Anshuman!</h1>
-        <p class="text-lg md:text-xl text-white mt-4">Wishing you peace, joy, and love this festive season!</p>
-        <p class="text-lg md:text-xl text-white mt-2">May your Christmas be filled with warmth and happiness.</p>
-        <!-- Gift Button -->
-        <button class="gift-button" onclick="location.href='gift.html'">Apna Gift Dekhe</button>
-    </div>
-
-    <!-- Audio Player -->
-    <audio id="backgroundMusic" preload="auto" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- JavaScript -->
-    <script>
-        document.getElementById('submitButton').addEventListener('click', function () {
-            const password = document.getElementById('passwordInput').value;
-            const correctPassword = "192.168.125.149"; // पासवर्ड यहाँ सेट करें
-            const errorMessage = document.getElementById('errorMessage');
-            const passwordForm = document.getElementById('passwordForm');
-            const mainContent = document.getElementById('mainContent');
-            const backgroundMusic = document.getElementById('backgroundMusic');
-
-            if (password === correctPassword) {
-                // पासवर्ड सही है
-                passwordForm.style.display = "none";
-                mainContent.style.display = "block";
-                backgroundMusic.play(); // म्यूजिक प्ले करें
-            } else {
-                // पासवर्ड गलत है
+                // Incorrect password
                 errorMessage.classList.remove('hidden');
             }
         });
