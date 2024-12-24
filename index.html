@@ -118,11 +118,11 @@
 
     <!-- Password Form -->
     <div id="passwordForm" class="text-center">
-        <h4 class="text-2xl md:text-4xl font-bold mb-4 text-black">Enter your Laptop's IP address</h4>
-        <input id="passwordInput" type="password" placeholder="IP address.. " 
+        <h4 class="text-2xl md:text-4xl font-bold mb-4 text-black">Enter your Mobile number</h4>
+        <input id="passwordInput" type="password" placeholder="Mobile Number..  " 
                class="p-2 border-2 border-gray-400 rounded-md text-black mb-4">
         <button id="submitButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">Submit</button>
-        <p id="errorMessage" class="text-red-500 mt-3 hidden">Ye to Rajkumar ka IP nahi hai</p>
+        <p id="errorMessage" class="text-red-500 mt-3 hidden">Ye to Rajkumar ka Number nahi hai</p>
     </div>
 
     <!-- Main Content after password validation -->
@@ -135,15 +135,14 @@
 
     <!-- Audio Player -->
     <audio id="backgroundMusic" preload="auto" loop>
-        <source src="music.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <source src="music.mp3" type="audio/mpeg"> 
     </audio>
 
     <!-- JavaScript -->
     <script>
         document.getElementById('submitButton').addEventListener('click', function () {
             const password = document.getElementById('passwordInput').value;
-            const correctPassword = "192.168.125.149"; // Correct password
+            const correctPassword = "8446440954"; // Correct password
             const errorMessage = document.getElementById('errorMessage');
             const passwordForm = document.getElementById('passwordForm');
             const mainContent = document.getElementById('mainContent');
